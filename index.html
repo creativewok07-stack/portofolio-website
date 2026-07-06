@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shobri Miftahul Azmi - Portofolio Modern</title>
+    <!-- Bootstrap 5 & Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ADAPTIVE NAVIGATION (Top on Desktop, Bottom App Bar on Mobile) -->
+    <nav class="navbar-adaptive">
+        <div class="nav-wrapper">
+            <!-- Brand Logo (Hanya muncul di Desktop untuk menjaga space mobile) -->
+            <a class="nav-brand-desktop" href="#home">
+                <img src="Asset/logo.png" alt="MASWOK ENGINE" class="logo-small me-2">
+                <span class="fw-bold text-uppercase">Maswok Engine</span>
+            </a>
+            
+            <!-- Link Menu Utama -->
+            <div class="nav-links-container">
+                <a class="nav-item-link" href="#home">
+                    <i class="fa-solid fa-house nav-icon-item"></i>
+                    <span class="nav-text-item">Home</span>
+                </a>
+                <a class="nav-item-link" href="#about">
+                    <i class="fa-solid fa-user nav-icon-item"></i>
+                    <span class="nav-text-item">About</span>
+                </a>
+                <a class="nav-item-link" href="#contact">
+                    <i class="fa-solid fa-phone nav-icon-item"></i>
+                    <span class="nav-text-item">Contact</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main id="main-content">
+
+        <!-- SECTION: HOME & PORTFOLIO -->
+        <section id="home" class="section-hero-layout">
+            <div class="container">
+                <div class="row align-items-center mb-5 py-4">
+                    <div class="col-lg-7 text-center text-lg-start hero-text">
+                        <span class="badge-tech mb-3 d-inline-block">Informatics Student & Tech Developer</span>
+                        <h1 class="display-5 fw-bold mb-3">Hi, I'm <span class="text-gradient">Shobri Miftahul Azmi</span></h1>
+                        <p class="lead fw-semibold mb-3">Business Technology Problem Solver & Web Development Designer</p>
+                        <p class="text-muted mb-4">Focused on solving business problems through technology, while enhancing business web development and digital design. <strong>Devbis Independent</strong>.</p>
+                        
+                        <div class="d-flex flex-wrap gap-3 mt-4 justify-content-center justify-content-lg-start align-items-center">
+                            <a href="#about" class="btn btn-maswok-outline px-4 py-2.5 fw-bold">
+                                Learn More <i class="fa-solid fa-arrow-down ms-2"></i>
+                            </a>
+                            <a href="Asset/CV.pdf" download="CV_Shobri_Miftahul_Azmi.pdf" class="btn btn-maswok-outline px-4 py-2.5 fw-bold">
+                                Download CV <i class="fa-solid fa-download ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 d-flex flex-column align-items-center mt-5 mt-lg-0">
+                        <div class="avatar-antigravity-wrapper">
+                            <img src="Asset/avatarwok.jpg" alt="Avatar Shobri" class="avatar shadow-lg img-fluid">
+                            <div class="orbit-ring"></div>
+                        </div>
+                        <h2 class="avatar-name mt-4 fw-bold">Maswok</h2>
+                    </div>
+                </div>
+
+                <hr class="my-5 opacity-25">
+
+                <!-- Projects Deck -->
+                <div class="portfolio-section w-100 pt-2">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold">Featured Projects</h2>
+                        <p class="text-muted">Exploration of digital solutions, reservation systems, and interactive educational portals.</p>
+                    </div>
+                    
+                    <div class="row g-4 justify-content-center">
+                        <!-- Project 1: GastroLink Resto -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="project-card shadow-sm h-100">
+                                <div class="card-img-container"><img src="Asset/kuliner.jpg" class="img-fluid" alt="GastroLink Resto"></div>
+                                <div class="card-body-custom">
+                                    <h3 class="h5 fw-bold">GastroLink Resto</h3>
+                                    <p class="text-muted text-small">An interactive web-based restaurant management and reservation system.</p>
+                                    <a href="Demorestoran/index.html" target="_blank" class="demo-btn text-decoration-none d-inline-block">Live Demo <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2: VistaQuest Travel -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="project-card shadow-sm h-100">
+                                <div class="card-img-container"><img src="Asset/pemandangan.jpg" class="img-fluid" alt="VistaQuest Travel"></div>
+                                <div class="card-body-custom">
+                                    <h3 class="h5 fw-bold">VistaQuest Travel</h3>
+                                    <p class="text-muted text-small">A modern web-based platform for exploring tourist destinations, featuring an interactive hero slider.</p>
+                                    <a href="Demotravelling/index.html" target="_blank" class="demo-btn text-decoration-none d-inline-block">Live Demo <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3: TechSphere Academy -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="project-card shadow-sm h-100">
+                                <div class="card-img-container"><img src="Asset/teknologi.jpg" class="img-fluid" alt="TechSphere Academy"></div>
+                                <div class="card-body-custom">
+                                    <h3 class="h5 fw-bold">TechSphere Academy</h3>
+                                    <p class="text-muted text-small">An integrated online portal for IT course registration and digital class management.</p>
+                                    <a href="Demokursuskomputer/index.html" target="_blank" class="demo-btn text-decoration-none d-inline-block">Live Demo <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: ABOUT ME & CERTIFICATIONS -->
+        <section id="about" class="section bg-light-smooth py-5 border-top border-bottom">
+            <div class="container py-4">
+                <h2 class="fw-bold mb-4 text-center">About Me</h2>
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-9 text-center">
+                        <p class="fs-5 text-secondary leading-relaxed mb-4">
+                            I am an Informatics student at Universitas Bina Sarana Informatika, specializing in solving business problems through technology. My expertise includes software engineering, algorithmic logic, and modern business web development using Python, HTML, CSS, and JavaScript with Git version control.
+                        </p>
+                        <p class="fs-5 text-secondary leading-relaxed">
+                            Beyond coding, I deliver innovative digital solutions for Devbis Independent, combining technical skills with business strategy to help clients achieve growth and efficiency.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="certifications-section mt-5 w-100">
+                    <h3 class="h4 fw-bold text-center mb-5">Certifications & Awards</h3>
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="cert-item shadow-sm text-center">
+                                <div class="cert-img-wrapper"><img src="Asset/serti entrepeneur.jpg" alt="Sertifikat Entrepreneur" class="img-fluid rounded"></div>
+                                <h4 class="h5 fw-bold mt-3">Entrepreneurship Achievement</h4>
+                                <p class="text-muted text-small px-2">Entrepreneurship Achievement honors excellence in business incubation and fundamental management strategies.</p>
+                                <span class="badge bg-success-soft text-success">Verified</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="cert-item shadow-sm text-center">
+                                <div class="cert-img-wrapper"><img src="Asset/serti hope.jpeg" alt="Sertifikat Hope" class="img-fluid rounded"></div>
+                                <h4 class="h5 fw-bold mt-3">Hope CTC</h4>
+                                <p class="text-muted text-small px-2">HOPE Computer Training Center certifies skills in Microsoft Office, 10-finger typing, and basic hardware-software knowledge.</p>
+                                <span class="badge bg-success-soft text-success">Verified</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="cert-item shadow-sm text-center">
+                                <div class="cert-img-wrapper"><img src="Asset/serti workshop bsi.jpeg" alt="Sertifikat Workshop BSI" class="img-fluid rounded"></div>
+                                <h4 class="h5 fw-bold mt-3">BSI IT Workshop Series</h4>
+                                <p class="text-muted text-small px-2">BSI IT Workshop Series certifies technical competence through creative digital workshops at Universitas BSI.</p>
+                                <span class="badge bg-success-soft text-success">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CONTACT -->
+        <section id="contact" class="section py-5">
+            <div class="container py-4">
+                <h2 class="fw-bold mb-2 text-center">Get In Touch</h2>
+                <p class="text-muted text-center mb-5">Ready to create something amazing together? Send me a message below!</p>
+                
+                <div class="row justify-content-center w-100 m-0">
+                    <div class="col-md-8 col-lg-6">
+                        <form id="contact-form" action="https://formspree.io/f/mzdlrryw" method="POST" class="text-start p-4 rounded-4 shadow-sm border">
+                            <div class="mb-3">
+                                <label for="contact-name" class="form-label fw-semibold">Full Name</label>
+                                <input type="text" name="name" class="form-control form-maswok" id="contact-name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-email" class="form-label fw-semibold">Email Address</label>
+                                <input type="email" name="_replyto" class="form-control form-maswok" id="contact-email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-message" class="form-label fw-semibold">Your Message</label>
+                                <textarea name="message" class="form-control form-maswok" id="contact-message" rows="4" placeholder="Share your message or collaboration idea here..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-maswok-outline w-100 py-2.5 fw-bold shadow-sm">Submit Message</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center gap-4 mt-5 pb-4 social-links-wrapper">
+                    <a href="https://wa.me/6287763913286" target="_blank" class="social-icon-box shadow-sm" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/development.busines?igsh=MWN5YXRhNGhvcGgzcg==" target="_blank" class="social-icon-box shadow-sm" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://github.com/creativewok07-stack" target="_blank" class="social-icon-box shadow-sm" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 MASWOK ENGINE - Devbis Independent. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
