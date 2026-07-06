@@ -1,0 +1,479 @@
+/* ==========================================================================
+   GLOBAL DESIGN CONFIGURATION - PREMIUM CYAN/BLUE DARK THEME
+   ========================================================================== */
+:root {
+    --bg-dark-100: #0d0e12;        /* Warna dasar gelap utama */
+    --bg-dark-200: #15171e;        /* Variasi halaman kontras agar tidak polos */
+    --bg-dark-card: #1b1e26;       /* Latar belakang kartu (Proyek & Sertifikasi) */
+    
+    /* Gradasi Utama Pilihanmu (#80C8F6 → #3957ED) */
+    --grad-primary: linear-gradient(135deg, #80C8F6 0%, #3957ED 100%);
+    --color-cyan: #80C8F6;
+    --color-blue: #3957ED;
+    --blue-glow: rgba(128, 200, 246, 0.15);
+    
+    --text-light: #f3f4f6;         /* Teks utama */
+    --text-muted: #9ca3af;         /* Teks deskripsi/sekunder */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-light);
+    background-color: var(--bg-dark-100);
+    overflow-x: hidden;
+    padding-top: 85px; /* Kompensasi tinggi navbar desktop */
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
+    color: #ffffff;
+}
+
+/* Efek transisi gradasi halus antar halaman agar background tidak polos */
+#home {
+    background: linear-gradient(180deg, var(--bg-dark-100) 0%, var(--bg-dark-200) 100%);
+}
+
+#about {
+    background: linear-gradient(180deg, var(--bg-dark-200) 0%, var(--bg-dark-100) 100%);
+}
+
+#contact {
+    background: var(--bg-dark-100);
+}
+
+/* ==========================================================================
+   UTILITIES & TYPOGRAPHY - SINKRONISASI BEBAS ERROR
+   ========================================================================== */
+.text-gradient { 
+    /* Fallback warna standar jika browser lama tidak mendukung kliping gradasi */
+    color: #80C8F6; 
+    
+    /* Set display agar pemotongan background bekerja akurat pada elemen text inline */
+    display: inline-block;
+    
+    /* Pengaturan Gradasi */
+    background: var(--grad-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    
+    /* Menggunakan filter drop-shadow yang aman untuk teks dengan background-clip */
+    filter: drop-shadow(0px 2px 8px rgba(128, 200, 246, 0.2)); 
+}
+
+.text-small { 
+    font-size: 0.9rem; 
+}
+
+.text-muted { 
+    color: var(--text-muted) !important; 
+}
+
+/* Pembatas halaman netral yang tipis */
+.border-top, .border-bottom, .border {
+    border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ==========================================================================
+   ADAPTIVE NAVIGATION CONTROL (NAVBAR FIX)
+   ========================================================================== */
+.navbar-adaptive {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(13, 14, 18, 0.85); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+    transition: all 0.4s var(--transition-smooth);
+}
+
+.nav-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 40px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Container Brand Link */
+.nav-brand-desktop {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    color: #ffffff;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+/* FIX UKURAN LOGO DI HEADER */
+.nav-brand-desktop img, 
+.logo-small {
+    max-height: 40px; 
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-brand-desktop span,
+.nav-brand-desktop h5,
+.nav-brand-desktop p {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.nav-links-container {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav-item-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-icon-item {
+    display: none; 
+}
+
+.nav-item-link:hover {
+    color: var(--color-cyan);
+}
+
+.nav-item-link::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--grad-primary);
+    transition: width 0.3s var(--transition-smooth);
+}
+
+.nav-item-link:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   COMPONENTS, BUTTONS & HERO INTERACTION
+   ========================================================================== */
+.section-hero-layout { padding: 40px 0; }
+
+.badge-tech {
+    padding: 6px 14px;
+    background-color: rgba(128, 200, 246, 0.1);
+    color: var(--color-cyan);
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid rgba(128, 200, 246, 0.2);
+}
+
+/* Avatar Frame & Animation */
+.avatar-antigravity-wrapper {
+    position: relative;
+    animation: floatNatural 6s ease-in-out infinite;
+}
+
+.avatar {
+    width: 240px;
+    height: 240px;
+    border-radius: 40px;
+    object-fit: cover;
+    border: 4px solid var(--bg-dark-card);
+    box-shadow: 0 10px 30px var(--blue-glow);
+}
+
+.orbit-ring {
+    position: absolute;
+    width: 290px;
+    height: 290px;
+    border: 1px dashed rgba(128, 200, 246, 0.2);
+    border-radius: 50%;
+    top: -25px;
+    left: -25px;
+    z-index: -1;
+}
+
+/* --- INTERAKSI TOMBOL-TOMBOL --- */
+
+/* Tombol Utama (Pelajari Lebih Lanjut) */
+/* --- INTERAKSI TOMBOL-TOMBOL (ANIMASI SERAGAM) --- */
+
+/* Tombol Utama (Pelajari Lebih Lanjut) */
+.btn-maswok {
+    background: var(--grad-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s var(--transition-smooth);
+}
+
+.btn-maswok:hover {
+    color: #ffffff;
+    transform: translateY(-4px); /* Animasi mengangkat ke atas */
+    box-shadow: 0 12px 24px rgba(57, 87, 237, 0.35); /* Efek glow biru pekat */
+}
+
+/* Tombol Outline (Unduh CV) */
+.btn-maswok-outline {
+    background: transparent;
+    color: var(--color-cyan);
+    border: 2px solid var(--color-cyan);
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s var(--transition-smooth);
+}
+
+.btn-maswok-outline:hover {
+    background: var(--grad-primary);
+    color: #ffffff !important;
+    border-color: transparent;
+    transform: translateY(-4px); /* Efek melayang ke atas */
+    box-shadow: 0 12px 24px rgba(57, 87, 237, 0.3); /* Efek glow biru lembut */
+}
+
+/* ==========================================================================
+   GRID CARDS (PROJECT & SERTIFIKASI)
+   ========================================================================== */
+.project-card, .cert-item {
+    background: var(--bg-dark-card);
+    border-radius: 20px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    height: 100%; 
+    transition: transform 0.4s var(--transition-smooth), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover, .cert-item:hover {
+    transform: translateY(-8px);
+    border-color: rgba(128, 200, 246, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 4px 20px var(--blue-glow) !important;
+}
+
+.card-img-container, .cert-img-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #1f232d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img-container img, .cert-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.cert-img-wrapper img {
+    object-fit: contain;
+    opacity: 0.9;
+}
+
+.project-card:hover img, .cert-item:hover img {
+    opacity: 1;
+}
+
+.card-body-custom, .cert-body-content {
+    padding-top: 16px;
+}
+
+.demo-btn, .demo-link {
+    background: transparent;
+    border: none;
+    color: var(--color-cyan);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.demo-btn:hover, .demo-link:hover {
+    color: var(--color-blue);
+}
+
+.bg-success-soft {
+    background-color: rgba(40, 167, 69, 0.12);
+    color: #2ed573 !important;
+    padding: 6px 16px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-radius: 30px;
+    border: 1px solid rgba(40, 167, 69, 0.15);
+}
+
+/* ==========================================================================
+   FORM DESIGN & CONTROLLER (KONTRAS TEMA GELAP)
+   ========================================================================== */
+#contact-form .form-label {
+    color: #ffffff;             
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-control.form-maswok {
+    background-color: #161820;  
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: #ffffff;             
+    border-radius: 10px;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+.form-maswok::placeholder {
+    color: #555b66;             
+}
+
+.form-maswok:focus {
+    background-color: #1e212b;  
+    color: #ffffff;
+    border-color: var(--color-cyan); 
+    box-shadow: 0 0 0 0.25rem rgba(128, 200, 246, 0.15); 
+    outline: none;
+}
+footer {
+    background-color: var(--bg-dark-100); /* Menggunakan variabel warna gelap utama */
+    color: var(--text-muted);             /* Warna teks abu-abu lembut */
+    padding: 30px 0;                      /* Jarak atas dan bawah footer */
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Garis pembatas tipis di atas footer */
+}
+
+/* ==========================================================================
+   SOCIAL DECK (4 IKON KONTAN)
+   ========================================================================== */
+.social-icon-box {
+    width: 48px;
+    height: 48px;
+    background: var(--bg-dark-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    color: #ffffff !important;
+    transition: all 0.3s var(--transition-smooth);
+    border: 1px solid rgba(255,255,255,0.04);
+    text-decoration: none;
+}
+
+.social-icon-box:hover {
+    transform: translateY(-5px);
+    background: var(--grad-primary);
+    color: #ffffff !important;
+    box-shadow: 0 8px 20px var(--blue-glow);
+    border-color: transparent;
+}
+
+@keyframes floatNatural {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+
+/* ==========================================================================
+   DYNAMIC MOBILE RESPONSIVE MEDIA QUERIES (FIX BALANCE MOBILE)
+   ========================================================================== */
+@media (max-width: 768px) {
+    body {
+        padding-top: 20px;       
+        padding-bottom: 90px;    
+    }
+
+    /* 1. PERBAIKAN TATA LETAK AVATAR AGAR CENTER & BALANCE DI HP */
+    .avatar-antigravity-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto 30px auto; 
+        position: relative;
+        animation: floatNatural 6s ease-in-out infinite;
+    }
+
+    .avatar {
+        width: 180px;
+        height: 180px;
+        border-radius: 30px;
+        position: relative;
+        z-index: 2; 
+    }
+
+    .orbit-ring {
+        width: 220px;
+        height: 220px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        z-index: 1;
+    }
+
+    /* 2. BOTTOM APP BAR ENGINE FOR MOBILE */
+    .navbar-adaptive {
+        top: auto;
+        bottom: 0;               
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: none;
+        background: rgba(21, 24, 30, 0.95);
+        box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.4);
+        border-radius: 24px 24px 0 0; 
+    }
+
+    .nav-wrapper { padding: 12px 24px; }
+    .nav-brand-desktop { display: none !important; }
+
+    .nav-links-container {
+        width: 100%;             
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    .nav-item-link {
+        flex-direction: column;  
+        gap: 4px;
+        padding: 8px 16px;
+        font-size: 0.78rem;       
+        font-weight: 600;
+    }
+
+    .nav-icon-item { display: block; font-size: 1.35rem; }
+    .nav-item-link::after { display: none !important; }
+
+    .nav-item-link:active .nav-icon-item,
+    .nav-item-link:focus .nav-icon-item {
+        color: var(--color-cyan);
+        transform: translateY(-4px); 
+    }
+
+    .display-5 { font-size: 2.1rem; }
+    .project-card:hover, .cert-item:hover { transform: translateY(-4px); }
+}
